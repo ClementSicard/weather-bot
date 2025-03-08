@@ -1,5 +1,8 @@
 [project]
-dependencies = ["loguru"]
+dependencies = [
+    "loguru",
+    "pydantic>=2.10.6",
+]
 description = "uv package for easy Python repo creation"
 dynamic = ["version"]
 keywords = []
@@ -43,6 +46,7 @@ requires = ["hatchling", "versioningit"]
 
 [tool.ruff]
 line-length = 80
+
 
 [tool.ruff.lint]
 select = [
