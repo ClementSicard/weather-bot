@@ -3,7 +3,6 @@
 import os
 
 from dotenv import load_dotenv
-from loguru import logger
 
 
 class Env:
@@ -19,9 +18,6 @@ class Env:
         token = os.getenv('TELEGRAM_BOT_TOKEN')
         if token is None:
             raise ValueError('API key not found in environment variables.')
-        logger.info(
-            'API key successfully retrieved from environment variables ✅'
-        )
         return token
 
     @property
@@ -30,7 +26,4 @@ class Env:
         token = os.getenv('TELEGRAM_CHAT_ID')
         if token is None:
             raise ValueError('API key not found in environment variables.')
-        logger.info(
-            'API key successfully retrieved from environment variables ✅'
-        )
         return token
