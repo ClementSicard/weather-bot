@@ -24,7 +24,11 @@ class TelegramBot:
             message (str): The message to send.
         """
         url = f"https://api.telegram.org/bot{self.bot_token}/sendMessage"
-        payload = {"chat_id": self.chat_id, "text": message}
+        payload = {
+            "chat_id": self.chat_id,
+            "text": message,
+            "parse_mode": "MarkdownV2",
+        }
         response = requests.post(url, json=payload, timeout=self.timeout)
 
         if response.status_code == requests.codes["ok"]:
