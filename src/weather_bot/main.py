@@ -30,8 +30,11 @@ def main(args: dict[str, Any]) -> None:
         else:
             logger.info("No rain today! 🌞 See you tomorrow")
 
-    except Exception as e:
+    except LookupError as e:
         logger.error("Failed to query Meteoswiss API.")
+        bot.send_telegram_message(API_ERROR_MESSAGE.format(repr(e)))
+    except Exception as e:
+        logger.error(f"An error occurred: {e}")
         bot.send_telegram_message(API_ERROR_MESSAGE.format(repr(e)))
 
 

@@ -11,7 +11,7 @@ MESSAGES = [
     """,
 ]
 
-API_ERROR_MESSAGE = """Oops - il y a eu une erreur avec l'API de MeteoSwiss 🤯💥
+API_ERROR_MESSAGE = """Oops - il y a eu une erreur 🤯💥
 
 Quelques détails:
 {}
