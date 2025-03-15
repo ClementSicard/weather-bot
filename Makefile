@@ -94,3 +94,10 @@ install:
 test:
 	$(PYTEST) --cov -n auto --dist loadgroup --junit-xml=$(TEST_RESULTS_FOLDER)/tests.xml --html=$(TEST_RESULTS_FOLDER)/tests.html --self-contained-html
 	$(UV_RUN) coverage-badge -o assets/coverage.svg -f
+
+
+#* Run
+
+.PHONY: run
+run:
+	uv run --no-sync python src/weather_bot/main.py --zip_code ${ZIP_CODE}
