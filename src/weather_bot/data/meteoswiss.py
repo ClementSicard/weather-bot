@@ -32,8 +32,7 @@ class MeteoSwiss:
             raise LookupError(
                 f"Precipitation data not found in JSON, only got {sorted(day_data.keys())}."
             )
-        # return day_data["precipitation"] > 0.0
-        return True
+        return day_data["precipitation"] > 0.0
 
     def is_raining_today(self, zip_code: str) -> bool:
         """Check if it is raining today."""

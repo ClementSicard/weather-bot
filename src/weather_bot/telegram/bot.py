@@ -27,11 +27,9 @@ class TelegramBot:
         payload = {"chat_id": self.chat_id, "text": message}
         response = requests.post(url, json=payload, timeout=self.timeout)
 
-        logger.info(url)
-        logger.info(payload)
-        logger.warning(response.json())
-
         if response.status_code == requests.codes["ok"]:
             logger.success(f"Message sent successfully to chat {self.chat_id}!")
         else:
-            logger.error("Failed to send message:", response.text)
+            logger.error(
+                f"Failed to send message: {response.json()} with payload {payload}"
+            )
