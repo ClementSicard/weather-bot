@@ -35,7 +35,6 @@ def main(args: dict[str, Any]) -> None:
     except Exception as e:
         logger.error("Failed to query Meteoswiss API.")
         bot.send_telegram_message(API_ERROR_MESSAGE.format(repr(e)))
-        return
 
 
 if __name__ == "__main__":
