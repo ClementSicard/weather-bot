@@ -12,4 +12,3 @@ def setup_logs() -> None:
     """Set up logging."""
     DEFAULT_LOG_FLDER.mkdir(exist_ok=True)
     logger.add(DEFAULT_LOG_FLDER / "weather_bot.log")
-    logger.info("Logging initialized.")
